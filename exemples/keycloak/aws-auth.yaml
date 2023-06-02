@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:sts::049763248546:assumed-role/AWSReservedSSO_AWSPowerUserAccess_65b6c151f6e6b38a/marc-andre.rochette
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:masters

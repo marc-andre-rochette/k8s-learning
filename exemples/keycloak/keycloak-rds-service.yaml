@@ -1,0 +1,16 @@
+# mysql-service.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: keycloak
+  labels:
+    app: postgresql-rds-service
+  name: postgresql-rds-service
+spec:
+  externalName: keycloak.cd0yyxsiwauj.us-east-1.rds.amazonaws.com
+  selector:
+    app: postgresql-rds-service
+  type: ExternalName
+status:
+  loadBalancer: {}
+  
