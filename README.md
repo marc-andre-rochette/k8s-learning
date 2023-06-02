@@ -71,3 +71,10 @@ eksctl create nodegroup --cluster=eksdemo1 \
                        --appmesh-access \
                        --alb-ingress-access \
                        --profile sandbox-marochette
+
+kubectl apply -f keycloak-ingress-class.yaml
+kubectl apply -f keycloak-namespace.yaml
+kubectl apply -f keycloak-config.yaml
+kubectl apply -f keycloak-deployment.yaml
+kubectl apply -f keycloak-ingress.yaml
+kubectl apply -f keycloak-service.yaml 

@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+    rolearn: arn:aws:iam::091632995049:role/AWSReservedSSO_AWSPowerUserAccess_c5af817b0c9443ea
+    username: system:node:{{EC2PrivateDNSName}}
+kind: ConfigMap
